@@ -1,0 +1,24 @@
+<prx-page-header pre="Manage Calendar" title="Calendars List">
+  <ng-container page-tools>
+    <button class="btn customButton mr-3" (click)="Create()" Category="button">
+      <prx-icon [icon]="icons.check"></prx-icon> New Calendar
+    </button>
+  </ng-container>
+</prx-page-header>
+
+<div class="container-fluid">
+  <prx-card class="item">
+    <prx-card-body>
+      <ng-container *ngIf="events && events.length; else loading">
+        <full-calendar defaultView="dayGridMonth" [slotLabelFormat]="calendar.eventTimeFormat"
+          [plugins]="calendar.plugins" timeZone='false' [header]="calendar.header" themeSystem="proxima"
+          [navLinks]="true" [editable]="false" [eventLimit]="true" [events]="events">
+        </full-calendar>
+      </ng-container>
+
+      <ng-template #loading>
+        <prx-loader [template]="'table'" [isLoading]="isLoading" [count]="2"></prx-loader>
+      </ng-template>
+    </prx-card-body>
+  </prx-card>
+</div>

@@ -1,0 +1,12 @@
+<div class="swiper-container swiper-nav-slide apps-slider" [swiper]="swiperConfig">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide" *ngFor="let screen of screens">
+      <prx-about-screen [name]="screen.name">
+        <prx-img [image]="'screens/' + screen.img + '.png'"></prx-img>
+      </prx-about-screen>
+    </div>
+  </div>
+
+  <div class="swiper-button rounded-circle swiper-button-prev"></div>
+  <div class="swiper-button rounded-circle swiper-button-next"></div>
+</div>

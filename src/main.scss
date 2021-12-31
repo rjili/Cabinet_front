@@ -1,0 +1,69 @@
+/*
+ * Entry point of global application style.
+ * Component-specific style should not go here and be included directly as part of the components.
+ */
+
+// Theme customization
+@import "theme/theme";
+@import "~ngx-toastr/toastr";
+
+.customButton {
+  color: #00c9b7;
+  border-color: #00c9b7;
+}
+
+.customButton:hover {
+  background-color: #00c9b7;
+  color: white;
+}
+
+.ngx-datatable.fixed-row .datatable-scroll .datatable-body-row .datatable-body-cell,
+.ngx-datatable.fixed-row .datatable-scroll .datatable-body-row .datatable-body-group-cell {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin: auto;
+}
+
+.theme-primary .bs-datepicker-head {
+  background-color: #009689;
+}
+
+.theme-primary .bs-datepicker-body table td span.selected,
+.theme-primary .bs-datepicker-body table td.selected span,
+.theme-primary .bs-datepicker-body table td span[class*="select-"]:after,
+.theme-primary .bs-datepicker-body table td[class*="select-"] span:after {
+  background-color: #009689;
+}
+
+.nav-tabs.tabs-bordered .nav-link.active {
+  box-shadow: 0 2px 0 0 #009689 inset;
+  border-top-color: transparent;
+}
+
+.nav-tabs .nav-link.active {
+  color: #009689;
+}
+
+#toast-container > .toast-success {
+  background-color: #00c9b7 !important;
+}
+
+.customIcon {
+  width: 17px !important;
+  height: 17px !important;
+}
+
+.customIcons {
+  width: 25px !important;
+  height: 25px !important;
+}
+.customSmallIcons {
+  width: 13px !important;
+  height: 13px !important;
+}
+
+.legendfill {
+  font-size: 10px !important;
+  font-weight: 400 !important;
+}

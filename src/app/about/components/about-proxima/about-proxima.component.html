@@ -1,0 +1,24 @@
+<prx-about-section [id]="'about'">
+  <div class="section-heading text-center">
+    <h2 class="heading-line">About Proxima</h2>
+
+    <p class="lead text-muted w-md-70 mx-auto">
+      Proxima is an Angular starter kit including modern tools and workflow based on angular-cli, best practices from
+      the community, a scalable base template and a good learning base.
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4" *ngFor="let benefit of benefits">
+      <div class="card shadow-hover border-0">
+        <div class="card-body">
+          <div class="bg-primary-gradient text-contrast rounded center-flex p-3 mb-3 icon">
+            <prx-icon [icon]="benefit.icon" size="lg"></prx-icon>
+          </div>
+
+          <p>{{ benefit.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</prx-about-section>

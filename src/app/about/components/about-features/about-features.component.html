@@ -1,0 +1,25 @@
+<prx-about-section [id]="'features'">
+  <div class="text-center">
+    <div class="section-heading">
+      <h2>What is included with your purchase</h2>
+      <p class="lead text-muted">
+        The app template is based on HTML5, TypeScript and Sass.
+      </p>
+    </div>
+  </div>
+
+  <div class="row gap-y">
+    <div class="col-md-6" *ngFor="let feature of features">
+      <div class="media align-items-center">
+        <div class="bg-light p-3 rounded d-flex align-items-center justify-content-center mr-3">
+          <prx-icon [icon]="feature.icon" size="lg" class="text-primary"></prx-icon>
+        </div>
+
+        <div class="media-body">
+          <h5>{{ feature.title }}</h5>
+          <p>{{ feature.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</prx-about-section>

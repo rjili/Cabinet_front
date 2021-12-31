@@ -1,0 +1,38 @@
+<section class="section">
+  <div class="container bring-to-front">
+    <div class="row align-items-center">
+      <div class="col-md-4 mr-md-auto">
+        <prx-img image="screens/layout/vertical-layout-menu-expanded.png" imgClass="shadow"></prx-img>
+
+        <div class="position-absolute">
+          <prx-img image="screens/layout/horizontal-layout-menu-expanded.png" imgClass="shadow"></prx-img>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="section-heading">
+          <h2>Multiple Layout Options</h2>
+          <p class="lead text-muted">
+            Layouts are defined by a json object, you can configure independant options for a particular layout such as
+            fixed or static behavior
+          </p>
+        </div>
+
+        <div class="row gap-y">
+          <div class="col-md-6" *ngFor="let option of options">
+            <div class="media">
+              <div class="bg-light p-3 rounded d-flex align-items-center justify-content-center mr-3">
+                <prx-icon [icon]="option.icon" size="lg" class="text-primary"></prx-icon>
+              </div>
+
+              <div class="media-body">
+                <h5>{{ option.title }}</h5>
+                <p>{{ option.description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

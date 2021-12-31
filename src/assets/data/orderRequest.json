@@ -1,0 +1,14 @@
+[
+  {
+    "value": "Pending",
+    "title": "Pending"
+  },
+  {
+    "value": "Accpeted",
+    "title": "Accpeted"
+  },
+  {
+    "value": "Rejected",
+    "title": "Rejected"
+  }
+]

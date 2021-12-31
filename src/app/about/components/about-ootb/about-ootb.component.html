@@ -1,0 +1,68 @@
+<section class="section bg-light border-top edge bottom-right">
+  <div class="container">
+    <div class="section-heading text-center">
+      <prx-icon icon="box" class="text-primary" size="lg"></prx-icon>
+      <h2 class="heading-line">Out of the box functionality</h2>
+      <p class="lead text-muted mx-auto w-md-70">
+        Speed up your development with a bast of out-of-the-box functionality, such as authentication,
+        internationalization, api calls, components loader, and so much more
+      </p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 col-lg-3 ml-lg-auto order-md-2">
+        <nav
+          class="nav flex-md-column justify-content-between justify-content-md-start nav-pills nav-pills-light nav-fill"
+        >
+          <a
+            class="nav-item nav-link bold text-md-left"
+            [class.active]="i === currentSlide"
+            (click)="updateSlider(i)"
+            href="javascript:;"
+            *ngFor="let item of items; let i = index"
+            ><prx-icon [icon]="item.icon" class="mr-2"></prx-icon>
+            {{ item.label }}
+          </a>
+        </nav>
+      </div>
+
+      <div class="col-md-8">
+        <prx-card>
+          <prx-card-body>
+            <swiper class="mt-4 mt-md-0" [index]="currentSlide" (indexChange)="onIndexChange($event)">
+              <div class="swiper-slide" *ngFor="let item of items">
+                <tabset type="tabs tabs-clean">
+                  <tab *ngFor="let block of item.blocks">
+                    <ng-template tabHeading>
+                      <prx-icon class="icon" [icon]="block.icon"></prx-icon>
+                      <span class="d-none d-md-inline-block text-capitalize">
+                        {{ block.title || block.lang }}
+                      </span>
+                    </ng-template>
+
+                    <div class="block-heading" [innerHtml]="block.description" *ngIf="block.description"></div>
+
+                    <pre
+                      *ngIf="block.code; else template"
+                    ><code [languages]="[block.lang]" [highlight]="block.code"></code></pre>
+
+                    <ng-template #template>
+                      <div [ngSwitch]="block.template">
+                        <div *ngSwitchCase="'loader'">
+                          <div class="mr-auto w-md-50">
+                            <prx-loader template="user-messages" [isLoading]="true"></prx-loader>
+                          </div>
+                        </div>
+                        <div *ngSwitchDefault></div>
+                      </div>
+                    </ng-template>
+                  </tab>
+                </tabset>
+              </div>
+            </swiper>
+          </prx-card-body>
+        </prx-card>
+      </div>
+    </div>
+  </div>
+</section>

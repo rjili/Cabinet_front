@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-md navigation sidebar-left fixed-top"
+  [ngClass]="{ 'navbar-expanded': navbarExpanded, 'navbar-sticky': navbarSticky, 'dark-link': darkLinks }">
+  <div class="container">
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <a href="#main" class="navbar-brand">
+      <img src="assets/img/logo.svg" alt="Proxima" class="logo logo-sticky" *ngIf="useOnlyDarkLogo; else logos" />
+      <ng-template #logos>
+        <img src="assets/img/logo.svg" alt="Proxima" class="logo logo-sticky d-block d-md-none" />
+        <img src="assets/cita.png" alt="Proxima" class="logo d-none d-md-block" />
+      </ng-template>
+
+      <span class="header-title">Proxima</span>
+    </a>
+
+    <div class="collapse navbar-collapse ml-auto">
+      <div class="sidebar-brand">
+        <a href="#main">
+          <img src="assets/img/logo.svg" alt="Proxima Admin" class="logo" />
+        </a>
+      </div>
+
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" [ngxScrollTo]="'home'" href="javascript:;">Home</a></li>
+        <li class="nav-item"><a class="nav-link" [ngxScrollTo]="'about'" href="javascript:;">About</a></li>
+        <li class="nav-item"><a class="nav-link" [ngxScrollTo]="'demos'" href="javascript:;">Demos</a></li>
+        <li class="nav-item"><a class="nav-link" [ngxScrollTo]="'features'" href="javascript:;">Features</a></li>
+      </ul>
+
+      <nav class="nav navbar-nav justify-content-center mt-4 mt-md-0 flex-row ml-md-3">
+        <a class="btn btn-rounded btn-outline mr-3 px-3" target="_blank"
+          href="https://themeforest.net/item/proxima-angular-9-bootstrap-4-admin-template/25904551">
+          <prx-icon [icon]="icons.buy" class="d-none d-md-inline mr-md-0 mr-lg-2"></prx-icon>
+          <span class="d-md-none d-lg-inline">But it Now</span>
+        </a>
+
+        <a class="btn btn-rounded btn-solid px-3" [ngxScrollTo]="'demos'" href="javascript:;">
+          <span class="d-md-none d-lg-inline">Check Demos</span>
+        </a>
+      </nav>
+    </div>
+  </div>
+</nav>

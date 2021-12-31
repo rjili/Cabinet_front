@@ -1,0 +1,29 @@
+<prx-card>
+  <prx-card-header>
+    <span class="is-new badge badge-danger badge-pill" *ngIf="demo.new">New</span>
+
+    <h4 class="card-title mb-0 text-capitalize">{{ demo.title }}</h4>
+    <p class="text-muted">{{ demo.description }}</p>
+
+    <nav class="btn-group ml-auto" card-tools>
+      <span *ngIf="!demo.soon; else soon">
+        <button
+          (click)="navigate(url)"
+          class="btn btn-{{ demo.btn.class }} px-3 shadow-none"
+          *ngFor="let url of demo.urls"
+        >
+          <prx-icon [icon]="url.icon" class="mr-2"></prx-icon>
+          <span class="demo-link-text">{{ url.text }}</span>
+        </button>
+      </span>
+
+      <ng-template #soon>
+        Coming Soon
+      </ng-template>
+    </nav>
+  </prx-card-header>
+
+  <prx-fade-content height="380">
+    <img class="card-img-bottom img-responsive" src="assets/img/demos/{{ demo.cover }}.png" alt="" />
+  </prx-fade-content>
+</prx-card>
